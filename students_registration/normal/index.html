@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="min-height=device-height, width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style/main.css" />
+    <script defer src="scripts/main.js"></script>
+
+    <title>Cadastro de Alunos</title>
+</head>
+
+<body>
+    <span id="info" title="Autor">i</span>
+
+    <h1>Sistema de Controle de Alunos</h1>
+
+    <section id="formulario">
+        <h2>Formulário de Alunos</h2>
+
+        <form onsubmit="inserir_aluno(event)">
+            <div class="grid">
+                <div class="col">
+                    <p><strong>Matrícula</strong></p>
+                    <input
+                        required
+                        type="text"
+                        class="input"
+                        pattern="\d{6}"
+                        placeholder="Adicione a matrícula do aluno"
+                    />
+                </div>
+
+                <div class="col">
+                    <p><strong>Nome</strong></p>
+                    <input
+                        required
+                        type="text"
+                        minlength="3"
+                        class="input"
+                        placeholder="Adicione o nome do aluno"
+                    />
+                </div>
+
+                <div class="col">
+                    <p><strong>Data de Nascimento</strong></p>
+                    <input
+                        required
+                        type="date"
+                        class="input"
+                        min="1925-01-01"
+                        max="2001-12-31"
+                    />
+                </div>
+
+                <div class="col">
+                    <p><strong>Email</strong></p>
+                    <input type="email" class="input" placeholder="Adicione o email do aluno" />
+                </div>
+
+                <div class="col">
+                    <p><strong>Operadora</strong></p>
+                    <select class="input">
+                        <option>Oi</option>
+                        <option>Tim</option>
+                        <option>Claro</option>
+                        <option>Vivo</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <p><strong>Número</strong></p>
+                    <input
+                        required
+                        id="phone-number"
+                        type="text"
+                        class="input"
+                        pattern="\(\d{2}\)\d{4,5}-?\d{4}"
+                        placeholder="(XX)XXXX-XXXX"
+                    />
+                </div>
+
+                <div class="col">
+                    <p><strong>Campus</strong></p>
+                    <select class="input" id="campus">
+                        <option selected>Pici</option>
+                        <option>Benfica</option>
+                        <option>Porangabussu</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <p><strong>Curso</strong></p>
+                    <div id="curso">
+                        <select class="input">
+                            <option selected>Computação</option>
+                            <option>Matemática</option>
+                            <option>Geologia</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <p id="buttons">
+                <input type="reset" value="Limpar" />
+                <input type="submit" id="submit" value="Inserir" />
+            </p>
+        </form>
+    </section>
+
+    <section id="alunos">
+        <div class="row">
+            <p class="col"><strong>Matrícula</strong></p>
+            <p class="col"><strong>Nome</strong></p>
+            <p class="col"><strong>Ações</strong></p>
+        </div>
+
+        <p id="warn-msg">Sem registros de alunos.</p>
+    </section>
+
+    <div id="modal" class="hidden">
+        <section id="author">
+            <h4>Autor</h4>
+            <img src="assets/author.jpeg" alt="Autor" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis lectus ante. Vivamus nec mollis sapien. Aenean bibendum euismod urna, ut pretium velit finibus in. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent leo arcu, tristique sed sapien eu, tincidunt pharetra orci. Suspendisse molestie malesuada justo, at vestibulum leo tristique egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum dignissim blandit dui. </p>
+        </section>
+    </div>
+</body>
+</html>
